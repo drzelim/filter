@@ -1,0 +1,296 @@
+:root {
+  --red-color: #A52838;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  -webkit-clip-path: inset(100%);
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.new-filter,
+.new-filter * {
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.new-filter__wrapper {
+  width: 305px;
+  min-height: 500px;
+  padding: 40px;
+  background-color: #FAFAFA;
+  border-radius: 15px;
+
+  align-items: center;
+}
+
+.new-filter h3 {
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+
+.new-filter__block {
+  width: 225px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-filter__price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-filter__price-fields,
+.new-filter__size-fields {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-filter__number-fields {
+  display: block;
+  width: 107px;
+  height: 45px;
+  padding: 12px 15px;
+
+  border: 1px solid #F1F1F1;
+  border-radius: 10px;
+  /* color: #888888; */
+}
+
+.new-filter__slider-container {
+  position: relative;
+}
+
+
+.new-filter__slider {
+  margin-top: 20px;
+}
+
+.new-filter__block-btn {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+  position: relative;
+}
+
+.new-filter__size {
+  margin-bottom: 20px;
+}
+
+.new-filter__toggle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.new-filter__block-btn::before,
+.new-filter__block-btn::after {
+  content: '';
+  position: absolute;
+
+  width: 8px;
+  height: 1px;
+
+  top: 15px;
+
+  background-color: var(--red-color);
+}
+
+.new-filter__block-btn::before {
+  transform: rotate(45deg);
+  left: 5px;
+}
+
+.new-filter__block-btn::after {
+  transform: rotate(-45deg);
+  left: 10px;
+}
+
+.new-filter__block-btn--opened .new-filter__block-btn::before {
+  transform: rotate(-45deg);
+}
+
+.new-filter__block-btn--opened .new-filter__block-btn::after {
+  transform: rotate(45deg);
+}
+
+.new-filter__open-field {
+  justify-content: space-between;
+}
+
+.new-filter__header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-filter__list-container {
+  /* display: none; */
+  width: 100%;
+}
+
+.new-filter__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.new-filter__list-item {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.new-filter__tooltip {
+  position: absolute;
+
+  min-width: 133px;
+  min-height: 44px;
+  background-color: var(--red-color);
+
+  left: 100%;
+  top: -12px;
+
+  border-radius: 10px;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.new-filter__tooltip::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+
+  background-image: url('../img/triangle.svg');
+  background-repeat: no-repeat;
+
+  top: 15px;
+  left: -10px;
+}
+
+.new-filter__slider-container .new-filter__tooltip {
+  left: 110%;
+  top: 31px;
+}
+
+.new-filter__list-item--all {
+  border-bottom: 1px solid #F1F1F1;
+  padding-bottom: 10px;
+}
+
+.new-filter__checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.new-filter__checkbox-indicator {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+
+  background-color: #F1F1F1;
+  border-radius: 4px;
+}
+
+.new-filter__checkbox input[type="checkbox"]:checked+.new-filter__checkbox-indicator {
+  position: relative;
+  background-color: var(--red-color);
+}
+
+.new-filter__checkbox input[type="checkbox"]:checked+.new-filter__checkbox-indicator::before {
+  content: '';
+  position: absolute;
+
+  width: 1px;
+  height: 6px;
+
+  top: 5px;
+  left: 8px;
+
+  background-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.new-filter__checkbox input[type="checkbox"]:checked+.new-filter__checkbox-indicator::after {
+  content: '';
+  position: absolute;
+
+  width: 1px;
+  height: 3px;
+
+  top: 8px;
+  left: 5px;
+
+  background-color: #ffffff;
+  transform: rotate(-45deg);
+}
+
+.new-filter__checkbox-value {
+  display: block;
+}
+
+.new-filter__buttons-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.new-filter__show-more {
+  cursor: pointer;
+
+  border: 0;
+  background-color: transparent;
+}
+
+.new-filter__reset-btn-container {
+  display: flex;
+}
+
+.new-filter__reset-btn {
+  color: var(--red-color);
+  cursor: pointer;
+
+  border: 0;
+  background-color: transparent;
+  text-decoration: underline;
+}
